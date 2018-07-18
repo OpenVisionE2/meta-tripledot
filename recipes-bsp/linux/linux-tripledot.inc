@@ -18,7 +18,7 @@ PKG_kernel-image = "kernel-image"
 RPROVIDES_kernel-base = "kernel-${KERNEL_VERSION}"
 RPROVIDES_kernel-image = "kernel-image-${KERNEL_VERSION}"
 
-SRC_URI += "http://source.mynonpublic.com/tripledot/${MACHINETYPE}-linux-${PV}-base-${SRCDATE}.tgz \
+SRC_URI += "http://source.mynonpublic.com/tripledot/${MACHINETYPE}-linux-${KERNEL_RELEASE}-base-${SRCDATE}.tgz \
 	file://defconfig \
 	file://add-rt2x00-wifi-devices.patch \
 	file://add-rtl8192cu-wifi-devices.patch \
