@@ -35,7 +35,6 @@ SRC_URI += "http://source.mynonpublic.com/tripledot/${MACHINETYPE}-linux-${KERNE
 	file://tda18271-advertise-supported-delsys.patch \
 	file://timedate.patch \
 	file://linux-3.14.2-gcc-4.9.3-build-error-fixed.patch \
-	file://kernel-add-support-for-gcc-5.patch \
 	file://rtl8712-fix-warnings.patch \
 	file://kernel-add-support-for-gcc6.patch \
 	file://0001-Support-TBS-USB-drivers.patch \
