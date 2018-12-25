@@ -1,2 +1,2 @@
 # meta-tripledot
-Tripledot BSP layer for PLi's OE
+Tripledot BSP layer for Open Vision
