@@ -20,6 +20,7 @@ RPROVIDES_${KERNEL_PACKAGE_NAME}-image = "${KERNEL_PACKAGE_NAME}-image-${KERNEL_
 
 SRC_URI += "http://source.mynonpublic.com/tripledot/${MACHINETYPE}-linux-${KERNEL_RELEASE}-base-${SRCDATE}.tgz \
 	file://defconfig \
+	file://${OPENVISION_BASE}/meta-openvision/recipes-linux/kernel-patches/kernel-add-support-for-gcc9.patch \
 	file://add-rt2x00-wifi-devices.patch \
 	file://add-rtl8192cu-wifi-devices.patch \
 	file://add-dmx-source-timecode.patch \
@@ -36,7 +37,6 @@ SRC_URI += "http://source.mynonpublic.com/tripledot/${MACHINETYPE}-linux-${KERNE
 	file://timedate.patch \
 	file://linux-3.14.2-gcc-4.9.3-build-error-fixed.patch \
 	file://rtl8712-fix-warnings.patch \
-	file://kernel-add-support-for-gcc6.patch \
 	file://0001-Support-TBS-USB-drivers.patch \
 	file://0001-STV-Add-PLS-support.patch \
 	file://0001-STV-Add-SNR-Signal-report-parameters.patch \
