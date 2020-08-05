@@ -10,7 +10,6 @@ PREFERRED_PROVIDER_virtual/kernel = "linux-tripledot-vg5000"
 
 SOC_FAMILY = "bcm7362"
 
-UBI_VOLNAME = "rootfs"
 MKUBIFS_ARGS = "-m 2048 -e 126976 -c 4096"
 UBINIZE_ARGS = "-m 2048 -p 128KiB -s 2048"
 
