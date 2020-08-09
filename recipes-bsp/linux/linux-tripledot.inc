@@ -1,14 +1,13 @@
 SUMMARY = "Linux kernel for ${MACHINE}"
 SECTION = "kernel"
 LICENSE = "GPLv2"
+LIC_FILES_CHKSUM = "file://${WORKDIR}/linux-${PV}-base/COPYING;md5=d7810fab7487fb0aad327b76f1be7cd7"
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
-KERNEL_RELEASE = "3.14.2"
+KERNEL_RELEASE = "${KERNELVERSION}"
 
 inherit kernel machine_kernel_pr samba_change_dialect
-
-LIC_FILES_CHKSUM = "file://${WORKDIR}/linux-${PV}-base/COPYING;md5=d7810fab7487fb0aad327b76f1be7cd7"
 
 # By default, kernel.bbclass modifies package names to allow multiple kernels
 # to be installed in parallel. We revert this change and rprovide the versioned
@@ -18,7 +17,7 @@ PKG_${KERNEL_PACKAGE_NAME}-image = "${KERNEL_PACKAGE_NAME}-image"
 RPROVIDES_${KERNEL_PACKAGE_NAME}-base = "${KERNEL_PACKAGE_NAME}-${KERNEL_VERSION}"
 RPROVIDES_${KERNEL_PACKAGE_NAME}-image = "${KERNEL_PACKAGE_NAME}-image-${KERNEL_VERSION}"
 
-SRC_URI += "http://source.mynonpublic.com/tripledot/${MACHINETYPE}-linux-${KERNEL_RELEASE}-base-${SRCDATE}.tgz \
+SRC_URI = "http://source.mynonpublic.com/tripledot/${MACHINETYPE}-linux-${KERNEL_RELEASE}-base-${SRCDATE}.tgz \
 	file://defconfig \
 	file://${OPENVISION_BASE}/meta-openvision/recipes-linux/kernel-patches/kernel-add-support-for-gcc${VISIONGCCVERSION}.patch \
 	file://add-rt2x00-wifi-devices.patch \
@@ -43,9 +42,9 @@ SRC_URI += "http://source.mynonpublic.com/tripledot/${MACHINETYPE}-linux-${KERNE
 	file://0001-stv090x-optimized-TS-sync-control.patch \
 	file://blindscan2.patch \
 	file://genksyms_fix_typeof_handling.patch \
-        file://0002-log2-give-up-on-gcc-constant-optimizations.patch \
-        file://0003-cp1emu-do-not-use-bools-for-arithmetic.patch \
-        file://0004-makefile-disable-warnings.patch \
+	file://0002-log2-give-up-on-gcc-constant-optimizations.patch \
+	file://0003-cp1emu-do-not-use-bools-for-arithmetic.patch \
+	file://0004-makefile-disable-warnings.patch \
 	"
 
 S = "${WORKDIR}/linux-${PV}-base"
