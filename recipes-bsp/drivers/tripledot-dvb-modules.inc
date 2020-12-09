@@ -6,7 +6,6 @@ require conf/license/license-close.inc
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
-
 PV = "${KV}+${SRCDATE}"
 
 SRC_URI = "http://source.mynonpublic.com/tripledot/${MACHINETYPE}-drivers-${KV}-${SRCDATE}.zip"
@@ -18,14 +17,11 @@ INHIBIT_PACKAGE_STRIP = "1"
 do_compile() {
 }
 
-do_populate_sysroot() {
-}
-
 do_install() {
-    install -d ${D}${nonarch_base_libdir}/modules/${KV}/extra
-    install -d ${D}${sysconfdir}/modules-load.d
-    install -m 0755 ${WORKDIR}/dvb.ko ${D}${nonarch_base_libdir}/modules/${KV}/extra
-    echo "dvb" > ${D}${sysconfdir}/modules-load.d/_${MACHINE}.conf
+	install -d ${D}${nonarch_base_libdir}/modules/${KV}/extra
+	install -d ${D}${sysconfdir}/modules-load.d
+	install -m 0755 ${WORKDIR}/dvb.ko ${D}${nonarch_base_libdir}/modules/${KV}/extra
+	echo "dvb" > ${D}${sysconfdir}/modules-load.d/_${MACHINE}.conf
 }
 
 FILES_${PN} += "${sysconfdir}/modules-load.d/_${MACHINE}.conf ${nonarch_base_libdir}/modules/${KV}/extra"
